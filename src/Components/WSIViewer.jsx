@@ -10,7 +10,7 @@ import {
   Menu,
   X,
   Settings,
-  RotateCcw
+  RotateCcw,
 } from "lucide-react";
 import wsi from "../assets/wsi.png";
 
@@ -121,7 +121,11 @@ const WSIViewer = () => {
       {/* Left Panel - Findings */}
       <div
         className={`fixed md:static w-72 bg-white h-full shadow-lg overflow-y-auto transition-transform duration-300 z-20 
-        ${isLeftPanelOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
+        ${
+          isLeftPanelOpen
+            ? "translate-x-0"
+            : "-translate-x-full md:translate-x-0"
+        }`}
       >
         <div className="p-4">
           <button
@@ -169,7 +173,7 @@ const WSIViewer = () => {
         {/* Top Bar */}
         <div className="h-14 bg-white shadow-sm flex items-center justify-between px-4">
           <div className="flex items-center space-x-4">
-            <button 
+            <button
               className="p-1.5 hover:bg-gray-100 rounded-lg md:hidden"
               onClick={() => setIsLeftPanelOpen(true)}
             >
@@ -192,7 +196,7 @@ const WSIViewer = () => {
             <button className="p-2 hover:bg-gray-100 rounded-lg hidden sm:block">
               <Printer className="w-5 h-5 text-gray-600" />
             </button>
-            <button 
+            <button
               className="p-2 hover:bg-gray-100 rounded-lg lg:hidden"
               onClick={() => setIsRightPanelOpen(true)}
             >
@@ -250,9 +254,9 @@ const WSIViewer = () => {
                 >
                   <ZoomOut className="w-5 h-5 text-gray-600" />
                 </button>
-                <button className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 border border-gray-200">
+                {/* <button className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 border border-gray-200">
                   <Move className="w-5 h-5 text-gray-600" />
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -260,7 +264,11 @@ const WSIViewer = () => {
           {/* Right Panel */}
           <div
             className={`fixed lg:static right-0 top-0 w-72 h-full bg-white lg:bg-transparent lg:w-72 space-y-4 p-4 shadow-lg lg:shadow-none transition-transform duration-300 z-20
-            ${isRightPanelOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"}`}
+            ${
+              isRightPanelOpen
+                ? "translate-x-0"
+                : "translate-x-full lg:translate-x-0"
+            }`}
           >
             <button
               className="lg:hidden absolute left-4 top-4"
@@ -268,7 +276,7 @@ const WSIViewer = () => {
             >
               <X className="w-6 h-6 text-gray-600" />
             </button>
-            
+
             {/* Hub View */}
             <div className="bg-white rounded-xl shadow-lg p-3 border border-gray-200 mt-12 lg:mt-0">
               <div className="text-center mb-3 text-sm font-medium text-gray-700 flex items-center justify-center">
